@@ -4,6 +4,12 @@ FROM library/logstash:1.5.0
 COPY ./configs.conf /
 ENV LOGSTASH_CONFIG /configs.conf
 
+COPY ./ssl.cert /ssl.cert
+ENV LOGSTASH_SSL_CERT /ssl.cert
+COPY ./ssl.key /ssl.key
+ENV LOGSTASH_SSL_KEY /ssl.key
+
+
 # 默认程序入口
 COPY ./docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]

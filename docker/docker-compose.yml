@@ -9,6 +9,8 @@ logstash:
     hostname: logstash
     links:
         - elasticsearch:elasticsearch
+    ports:
+        - "5566:5566"
 
 
 kibana:

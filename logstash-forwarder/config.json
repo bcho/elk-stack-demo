@@ -1,0 +1,15 @@
+{
+  "network": {
+    "servers": ["logstash-remote:5566"],
+    "ssl certificate": "./ssl.cert",
+    "ssl key": "./ssl.key",
+    "ssl ca": "./ssl.cert",
+    "timeout": 15
+  },
+  "files": [
+    {
+      "paths": ["-"],
+      "field": {"type": "stdin"}
+    }
+  ]
+}
