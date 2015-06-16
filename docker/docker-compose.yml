@@ -1,0 +1,20 @@
+# TODO data volumes -> not work for boot2docker (see boot2docker#581).
+elasticsearch:
+    build: container/elasticsearch
+    hostname: elasticsearch
+
+
+logstash:
+    build: container/logstash
+    hostname: logstash
+    links:
+        - elasticsearch:elasticsearch
+
+
+kibana:
+    build: container/kibana
+    hostname: kibana
+    links:
+        - elasticsearch:elasticsearch
+    ports:
+        - "5601:5601"
