@@ -9,6 +9,9 @@ ENV LOGSTASH_SSL_CERT /ssl.cert
 COPY ./ssl.key /ssl.key
 ENV LOGSTASH_SSL_KEY /ssl.key
 
+COPY ./grok-patterns /grok-patterns
+ENV GROK_PATTERNS /grok-patterns
+
 
 # 默认程序入口
 COPY ./docker-entrypoint.sh /
